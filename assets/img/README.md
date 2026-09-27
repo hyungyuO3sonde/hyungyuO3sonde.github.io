@@ -13,3 +13,8 @@
 
 - 확장자는 `.jpg` 여야 합니다. HEIC 파일이라면 미리보기 앱에서 JPEG로 내보내기 하세요.
 - 사진이 잘리는 게 싫으면 `style.css`의 `object-fit: cover` 를 `contain` 으로 바꾸면 됩니다.
+
+## 논문 그림은 `assets/fig/`에
+
+논문 그림(.webp)은 이 폴더가 아니라 `assets/fig/`에 넣으세요.
+`publish.sh`가 이 폴더(`assets/img/`)의 사진을 모두 .jpg로 바꾸기 때문에, 여기에 .webp를 두면 링크가 깨집니다.
