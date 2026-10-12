@@ -63,7 +63,7 @@
     --accent-tint: #1e3137;
     --on-accent:   #0f1a1d;
   }
-  .fig img, .photo img, .gallery img, .portrait, .marathon img { filter: brightness(.92); }
+  .fig img, .photo img, .gallery img, .portrait, .marathon img, .poster img { filter: brightness(.92); }
 }
 
 /* ---------- base ---------- */
@@ -147,6 +147,32 @@ nav ul a:hover { color: var(--accent-ink); text-decoration: none; }
 }
 @keyframes run-grow  { to { transform: scaleX(1); } }
 @keyframes run-count { to { --run: 422; } }   /* 42.2 km, a full marathon */
+
+/* ---------- current event (APARC 2026 poster), first thing below the nav ---------- */
+body > section.event { background: var(--surface); padding: 48px 0; border-bottom: 1px solid var(--line); }
+.event-grid {
+  display: grid; grid-template-columns: 340px 1fr; column-gap: 40px;
+  grid-template-areas: "poster label" "poster text";
+  grid-template-rows: auto 1fr;
+}
+.event-label {
+  grid-area: label; margin: 0 0 10px;
+  font-family: var(--mono); font-size: 12.5px; color: var(--accent-ink);
+}
+.poster { grid-area: poster; display: block; align-self: start; }
+.poster img {
+  display: block; width: 100%; height: auto;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  transition: border-color .2s;
+}
+.poster:hover img { border-color: var(--accent); }
+.event-text { grid-area: text; min-width: 0; }
+.event-text h2 { font-size: 22px; line-height: 1.35; margin: 0 0 10px; }
+.event-text .pub-authors { margin: 0 0 18px; }
+.event-meta { margin: 0 0 22px; }
+.event-meta > div { display: flex; gap: 16px; padding: 4px 0; font-size: 15px; }
+.event-meta dt { width: 88px; flex: none; color: var(--ink-faint); font-size: 14px; }
+.event-meta dd { margin: 0; color: var(--ink); }
 
 /* ---------- header ---------- */
 header { padding: 72px 0 56px; border-bottom: 1px solid var(--line); }
@@ -301,6 +327,11 @@ footer {
   nav .wrap { justify-content: center; }
   nav ul { gap: 14px; }
   nav ul a { font-size: 14px; }
+
+  body > section.event { padding: 28px 0 36px; }
+  .event-grid { grid-template-columns: 1fr; grid-template-areas: "label" "poster" "text"; grid-template-rows: none; }
+  .poster { margin-bottom: 20px; }
+  .event-text h2 { font-size: 20px; }
 
   header { padding: 40px 0 40px; }
   h1 { font-size: 32px; }
