@@ -298,6 +298,17 @@ h2 + .row { padding-top: 0; }
 .row h3 { font-size: 17.5px; }
 .row .sub { color: var(--ink-soft); font-size: 14.5px; margin: 0; }
 .row .note { color: var(--ink-faint); font-size: 14px; margin: 6px 0 0; }
+.row h4 {
+  font-family: var(--serif); font-size: 17.5px; line-height: 1.4; font-weight: 600;
+  margin: 0 0 4px;
+}
+.row .pub-authors, .row .pub-venue { margin-bottom: 0; }
+
+/* conference presentations: international / domestic groups */
+h3.group { font-size: 19px; margin: 0 0 4px; }
+.row + h3.group { margin-top: 40px; }
+h3.group + .row { padding-top: 8px; }
+[lang="ko"] { word-break: keep-all; }   /* break Korean lines between words, not inside names */
 
 /* ---------- field gallery ---------- */
 .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
